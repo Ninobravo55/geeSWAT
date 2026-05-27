@@ -1,0 +1,87 @@
+[general]
+name=geeSWAT
+qgisMinimumVersion=3.16
+qgisMaximumVersion=4.99
+description=SWAT hydrological modelling support with Google Earth Engine - integrated AOI selector, DEM, Soil, and Landuse download
+version=1.2.0
+author=Geomatica Ambiental
+email=nino@geomatica.pe
+authorUrl=https://www.geomatica.pe/
+
+about=geeSWAT is a QGIS plugin that integrates Google Earth Engine to support
+    SWAT (Soil and Water Assessment Tool) hydrological modelling workflows.
+
+    Connects QGIS with GEE to download and preprocess spatial data required
+    for hydrological basin delineation and SWAT model setup.
+
+    Tab 1 - Config GEE:
+    - Google Earth Engine account (Gmail) and Cloud Project ID
+    - Authenticate with Google (opens browser)
+    - Verify connection
+    - Output project name and output folder
+    - Save configuration
+
+    Tab 2 - Select AOI:
+    - Load area of interest from a vector layer
+    - Draw polygon interactively on the QGIS map canvas
+    - Geometry card: area, perimeter, centroid, UTM zone, bounding box
+
+    Tab 3 - MDE (DEM):
+    - Download Digital Elevation Model from GEE
+    - 9 DEM sources: SRTM 30m, Copernicus GLO-30, NASADEM, ALOS AW3D30,
+      MERIT DEM, SRTM 90m, HydroSHEDS, ASTER GDEM v3, 3DEP 1m
+    - Output scale selector (0 = native DEM resolution)
+    - Auto output path to subfolder DEM/ inside selected output folder
+    - Live log panel + progress bar + cancel button
+
+    Tab 4 - SOIL:
+    - Download Soil type raster from GEE
+    - 2 Soil sources: suelo_FAO (9km global) or OpenLandMap Soil (250m global)
+    - Auto output path to subfolder SOIL/ inside selected output folder
+    - Auto-generated Soil_lookup.csv for SWAT
+
+    Tab 5 - LANDUSE:
+    - Download Land Use raster from GEE
+    - 2 Landuse sources: Copernicus 2019 (100m) or ESA GlobCover 2009 (300m)
+    - Auto output path to subfolder LANDUSE/ inside selected output folder
+    - Auto-generated Landuse_lookup.csv for SWAT
+
+    COMPATIBILITY:
+    - Qt5 (PyQt5) and Qt6 (PyQt6) via qgis.PyQt compatibility layer
+    - QGIS 3.16 to 4.99
+
+    Developed and maintained by:
+    Geomatica Ambiental - www.geomatica.pe
+    Nino Bravo Morales (nino@geomatica.pe, +51 995664488)
+
+icon=icon.png
+
+tracker=https://www.geomatica.pe/
+repository=https://www.geomatica.pe/
+homepage=https://www.geomatica.pe/
+category=Plugins
+tags=swat, gee, google earth engine, dem, mde, soil, landuse, elevation, copernicus, merit, hydrological, basin, watershed, cuenca, modelo hidrologico, descarga, raster, peru
+hasProcessingProvider=yes
+server=False
+experimental=True
+deprecated=False
+license=GPL version 2 or any later version
+licenseUrl=https://www.gnu.org/licenses/gpl-2.0.html
+
+changelog=1.2.0
+    - Added SOIL tab with suelo_FAO and OpenLandMap Soil options and Soil_lookup.csv generation.
+    - Added LANDUSE tab with Copernicus 2019 and ESA GlobCover 2009 options and Landuse_lookup.csv generation.
+    - Added premium developer contact card in Acerca de tab.
+    - Added project CRS reprojection on download.
+    1.1.0
+    - MDE download moved into the main dialog as a full integrated interface
+    - New AOI tab: load from vector layer or draw polygon interactively on the map
+    - AOI geometry card: area, perimeter, centroid, UTM zone, bbox
+    - New MDE tab: DEM source selector (9 sources), scale spinner (0 = native resolution)
+    - Output auto-routed to output_folder/DEM/project_dem_timestamp.tif
+    - Live log panel (console-style) with QThread download worker
+    - Progress bar and Cancel button during download
+    1.0.0
+    - Initial release: Config GEE tab (authentication, project, output folder)
+    - MDE menu: Download DEM from GEE (9 sources, dual strategy direct/Drive)
+
