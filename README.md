@@ -31,6 +31,29 @@
 
 ---
 
+## 📁 Estructura del Proyecto
+
+```
+geeSWAT/
+├── Icons/                     # Recursos visuales del plugin
+│   ├── dem.png
+│   └── dep.png
+├── Script/                    # Procesadores y Algoritmos GEE (QThreads)
+│   ├── __init__.py
+│   ├── mde_descargar_mde.py          # Procesamiento y descarga de DEMs
+│   ├── soil_descargar_suelo.py        # Procesamiento de Suelos + Tabla Lookup
+│   └── landuse_descargar_landuse.py  # Procesamiento de Coberturas + Tabla Lookup
+├── LICENSE                    # Licencia Oficial GNU GPL v2
+├── README.md                  # Documentación del Repositorio
+├── geeswat_dialog.py         # Interfaz de Usuario UI (PyQt5 / PyQt6)
+├── geeswat_provider.py       # Integración con Caja de Herramientas Processing
+├── icon.png                  # Icono de acceso rápido
+├── metadata.txt              # Metadatos del complemento para QGIS
+└── plugin.py                 # Orquestador y Registro de Eventos del Ciclo QGIS
+```
+
+---
+
 ## 🛠️ Requisitos de Instalación
 
 El plugin requiere la biblioteca oficial de Google Earth Engine para Python (`earthengine-api`). 

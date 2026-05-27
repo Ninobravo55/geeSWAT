@@ -1999,7 +1999,7 @@ class GeeSWATDialog(QDialog):
                     else:
                         p = geom.asPolygon()
                         n_verts = len(p[0]) if p else 0
-            except Exception:
+            except Exception:  # nosec
                 pass
 
             # Alerta área

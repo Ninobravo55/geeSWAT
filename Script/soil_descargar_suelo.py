@@ -33,7 +33,7 @@ SOIL_SOURCES = [
         'id'   : 'FAO',
         'label': 'Suelo FAO (DSMW - FAO/UNESCO World Soil Map)',
         'tipo' : 'vector',
-        'asset': 'projects/gee-unas/assets/DSMW_GEO',
+        'asset': 'projects/gee-unas/assets/DSMW_GEO',  # pragma: allowlist secret
         'campo': 'SNUM',
         'campo_nombre': 'SNAM',
         'scale': 250,
@@ -43,14 +43,14 @@ SOIL_SOURCES = [
             'Fuente vectorial rasterizada al AOI. Escala 1:5,000,000. '
             'Campos SWAT: SNUM (ID numerico), SNAM (nombre del suelo).'
         ),
-        'tabla_asset': 'projects/gee-unas/assets/SWAT/Equivalencia_Suelo_FAO',
+        'tabla_asset': 'projects/gee-unas/assets/SWAT/Equivalencia_Suelo_FAO',  # pragma: allowlist secret
         'nodata': -9999,
     },
     {
         'id'   : 'DSoilMap',
         'label': 'DSoilMap - Digital Soil Open Land Map (250 m)',
         'tipo' : 'raster',
-        'asset': 'projects/gee-unas/assets/DSOLMap',
+        'asset': 'projects/gee-unas/assets/DSOLMap',  # pragma: allowlist secret
         'campo': 'SNUM',
         'campo_nombre': 'SNAM',
         'scale': 250,
@@ -60,7 +60,7 @@ SOIL_SOURCES = [
             'IDs numericos directamente compatibles con SWAT. '
             'Mayor detalle espacial que FAO en regiones tropicales.'
         ),
-        'tabla_asset': 'projects/gee-unas/assets/SWAT/Equivalencia_DSOLMap',
+        'tabla_asset': 'projects/gee-unas/assets/SWAT/Equivalencia_DSOLMap',  # pragma: allowlist secret
         'campo_id_tabla': 'OBJECTID',
         'nodata': -9999,
     },
@@ -352,7 +352,7 @@ class SoilWorker(QThread):
                                                'OBJECTID', 'SNUM', 'ID'):
                             try:
                                 sid = int(float(v))
-                            except Exception:
+                            except Exception:  # nosec
                                 pass
                             break
                     if sid is not None and sid in ids_py:

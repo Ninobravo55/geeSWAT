@@ -132,7 +132,7 @@ class GeeSWATPlugin:
 
     def _install_dependencies(self, missing):
         import sys
-        import subprocess
+        import subprocess  # nosec
         import tempfile
 
         osgeo4w_root = os.environ.get('OSGEO4W_ROOT')
@@ -150,7 +150,7 @@ class GeeSWATPlugin:
             tmp = os.path.join(tempfile.gettempdir(), 'install_geeswat_deps.bat')
             with open(tmp, 'w') as f:
                 f.write(script)
-            subprocess.Popen(['cmd.exe', '/c', 'start', 'cmd.exe', '/c', tmp])
+            subprocess.Popen(['cmd.exe', '/c', 'start', 'cmd.exe', '/c', tmp])  # nosec
             QMessageBox.information(
                 self.iface.mainWindow(), 'geeSWAT — Instalando',
                 'Se ha abierto una ventana de terminal.\n'
@@ -159,7 +159,7 @@ class GeeSWATPlugin:
         else:
             try:
                 python_exe = sys.executable
-                subprocess.check_call([python_exe, '-m', 'pip', 'install', *missing])
+                subprocess.check_call([python_exe, '-m', 'pip', 'install', *missing])  # nosec
                 QMessageBox.information(
                     self.iface.mainWindow(), 'geeSWAT — Éxito',
                     'Dependencias instaladas. Reinicia QGIS.'

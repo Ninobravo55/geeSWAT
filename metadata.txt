@@ -3,7 +3,7 @@ name=geeSWAT
 qgisMinimumVersion=3.16
 qgisMaximumVersion=4.99
 description=SWAT hydrological modelling support with Google Earth Engine - integrated AOI selector, DEM, Soil, and Landuse download
-version=1.2.0
+version=1.2.1
 author=Geomatica Ambiental
 email=nino@geomatica.pe
 authorUrl=https://www.geomatica.pe/
@@ -63,12 +63,12 @@ category=Plugins
 tags=swat, gee, google earth engine, dem, mde, soil, landuse, elevation, copernicus, merit, hydrological, basin, watershed, cuenca, modelo hidrologico, descarga, raster, peru
 hasProcessingProvider=yes
 server=False
-experimental=True
+experimental=False
 deprecated=False
 license=GPL version 2 or any later version
 licenseUrl=https://www.gnu.org/licenses/gpl-2.0.html
 
-changelog=1.2.0
+changelog=1.2.1
     - Added SOIL tab with suelo_FAO and OpenLandMap Soil options and Soil_lookup.csv generation.
     - Added LANDUSE tab with Copernicus 2019 and ESA GlobCover 2009 options and Landuse_lookup.csv generation.
     - Added premium developer contact card in Acerca de tab.

@@ -82,7 +82,7 @@ LANDUSE_SOURCES = [
     {
         'id'        : 'COPERNICUS_2019',
         'label'     : 'Copernicus Global Land Cover 2019 (100 m)',
-        'collection': 'COPERNICUS/Landcover/100m/Proba-V-C3/Global/2019',
+        'collection': 'COPERNICUS/Landcover/100m/Proba-V-C3/Global/2019',  # pragma: allowlist secret
         'banda'     : 'discrete_classification',
         'scale'     : 100,
         'tabla_swat': _TABLA_2019,
@@ -95,7 +95,7 @@ LANDUSE_SOURCES = [
     {
         'id'        : 'GLOBCOVER_2009',
         'label'     : 'ESA GlobCover 2009 (300 m)',
-        'collection': 'ESA/GLOBCOVER_L4_200901_200912_V2_3',
+        'collection': 'ESA/GLOBCOVER_L4_200901_200912_V2_3',  # pragma: allowlist secret
         'banda'     : 'landcover',
         'scale'     : 300,
         'tabla_swat': _TABLA_2009,
